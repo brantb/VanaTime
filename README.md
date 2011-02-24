@@ -106,24 +106,26 @@ Even though each of the 3 nations has a single *in-game airship* traveling betwe
 
 `FFXI.routes` has the following trips defined:
 
-* Airships
-** jeunoToBastok
-** bastokToJeuno
-** jeunoToWindurst
-** windurstToJeuno
-** jeunoToSandoria
-** sandoriaToJeuno
-** jeunoToKazham
-** kazhamToJeuno
-* Manaclippers
-** bibikiToPuronogo
-** puronogoToBibiki
-** reefTour
-** rockTour
-* Ferries (These have identical schedules in both directions, so there's only one route for each path)
-** selbinaMhaura
-** alZahbiMhaura
-** alZahbiNashmau
+#### Airships
+* jeunoToBastok
+* bastokToJeuno
+* jeunoToWindurst
+* windurstToJeuno
+* jeunoToSandoria
+* sandoriaToJeuno
+* jeunoToKazham
+* kazhamToJeuno
+#### Manaclippers
+* bibikiToPuronogo
+* puronogoToBibiki
+* reefTour
+* rockTour
+#### Ferries
+These have identical schedules in both directions, so there's only one route for each path.
+
+* selbinaMhaura
+* alZahbiMhaura
+* alZahbiNashmau
 
 ### Methods
 
