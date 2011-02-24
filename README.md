@@ -102,7 +102,7 @@ A `Route` represents a single leg of an airship or ferry trip. A route has three
 
 Even though each of the 3 nations has a single *in-game airship* traveling between it and Jeuno, it is defined as two separate routes: One for each direction of travel.
 
-**Note** I never bothered figuring out how many seconds airships spend in the boarding phase, so it's set to zero. Useful, eh?
+**Note**: I never bothered figuring out how many seconds airships spend in the boarding phase, so it's set to zero. Useful, eh?
 
 `FFXI.routes` has the following trips defined:
 
@@ -115,11 +115,13 @@ Even though each of the 3 nations has a single *in-game airship* traveling betwe
 * sandoriaToJeuno
 * jeunoToKazham
 * kazhamToJeuno
+
 #### Manaclippers
 * bibikiToPuronogo
 * puronogoToBibiki
 * reefTour
 * rockTour
+
 #### Ferries
 These have identical schedules in both directions, so there's only one route for each path.
 
@@ -141,5 +143,4 @@ As with `Shop`s, all of these methods act on the current Vana'diel time, and tak
 	// What Earth time does the airship from Jeuno to Windurst leave?
     var leavesAt = FFXI.routes.jeunoToWindurst.nextDeparture();
 	console.log(leavesAt.earthDate.toString());     // Thu Feb 24 2011 15:29:25 GMT-0600 (Central Standard Time)
-	
 	
