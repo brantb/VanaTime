@@ -300,7 +300,7 @@
         next: function (days) {
             var numDays = days;
             if (typeof (numDays) != 'number') {
-                day = 1;
+                numDays = 1;
             }
             var newVTime = this.time + (VANA_SECS_PER_DAY * numDays);
             return new VanaDate(newVTime);
@@ -308,7 +308,7 @@
         previous: function (days) {
             var numDays = dayNum;
             if (typeof (numDays) != 'number') {
-                day = 1;
+                numDays = 1;
             }
 
             var newVTime = this.time - (VANA_SECS_PER_DAY * numDays);
