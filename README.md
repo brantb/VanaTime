@@ -42,9 +42,9 @@ A `VanaDate` has the following properties:
 * 7: Waning Crescent
 
 ### Instance methods
-* `start()` -- Returns the beginning of the Vana'diel day.
-* `next()` -- Returns the next Vana'diel day.
-* `previous()` -- Returns the previous Vana'diel day.
+* `start()` (`VanaDate`) Returns the beginning of the Vana'diel day.
+* `next()` (`VanaDate`) Adds a day. Takes an optional integer parameter to add more than one.
+* `previous()` (`VanaDate`) Subtracts a day. Takes an optional integer parameter to subtract more than one.
 
 ### Usage
 
