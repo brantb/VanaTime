@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+	<title>VanaTime demo</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+	<script type="text/javascript" src="vanatime.js"></script>
+</head>
+<body>
+
+<p>Current Vana'diel date and time: <span id="datetime"></span></p>
+<p>Weekday: <span id="weekday"></span>. Tomorrow is <span id="tomorrow"></span>.</p>
+<p>Moon phase: <span id="moon"></span> (<span id="moonPercent"></span>%)</p>
+<p>The airship from Jeuno to Kazham departs at <span id="airship"></span>.</p>
+<p id="shopstatus"></p>
+
+<script type="text/javascript">
+String.prototype.format = function() {
+    var formatted = this;
+    for (var i = 0; i < arguments.length; i++) {
+        var regexp = new RegExp('\\{'+i+'\\}', 'gi');
+        formatted = formatted.replace(regexp, arguments[i]);
+    }
+    return formatted;
+};
+function update() {
+	var now = new VanaDate();
+	var dateTimeString = "{0}/{1}/{2} {3}:{4}.{5}"
+		.format(now.year, now.month, now.day, now.hour, now.minute, now.second);
+	$("#datetime").text(dateTimeString);
+	$("#weekday").text(now.weekDayName);
+	$("#tomorrow").text(now.next().weekDayName);
+	$("#moon").text(now.moonPhaseName);
+	$("#moonPercent").text(now.moonPercent);
+
+	var airshipDeparture = FFXI.routes.jeunoToKazham.nextDeparture();
+	var departureEarth = airshipDeparture.earthDate;
+	$("#airship").text(departureEarth.toString());
+
+	var guildOpen = FFXI.shops.cooking.nextOpen();
+	var guildClose = FFXI.shops.cooking.nextClose();
+	
+	var shopStatus = "The cooking guild is {0}. It {1} at {2}.";
+	if (FFXI.shops.cooking.isOpen()) {
+		shopStatus = shopStatus.format("open", "closes", guildClose.earthDate.toString());
+	} else {
+		shopStatus = shopStatus.format("closed", "opens", guildOpen.earthDate.toString());
+	}
+	$("#shopstatus").text(shopStatus);
+}	
+
+$(function() {
+	setInterval(update, 500);
+});
+
+</script>
+</body>
+</html>
