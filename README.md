@@ -18,26 +18,28 @@ A `VanaDate` has the following properties:
 * `year`
 * `month` (0-11)
 * `day` (0-29)
-* `weekDay` (0-7) -- Vana'diel weeks have eight days
+* `weekDay` (0-7) Vana'diel weeks have eight days
 * `hour` (0-23)
 * `minute` (0-59)
 * `second` (0-59)
-* `weekDayName` (string) -- Name of the day, i.e. "Earthsday"
-* `earthDate` (`Date`) -- A JavaScript Date object of this instance's point in Earth time.
-* `time` (integer) -- Raw number of Vana'diel seconds since midnight on 0001/01/01.
+* `weekDayName` (string) Name of the day, i.e. "Earthsday"
+* `earthDate` (`Date`) A JavaScript Date object of this instance's point in Earth time.
+* `time` (integer) Raw number of Vana'diel seconds since midnight on 0001/01/01.
 
 ### Moon phases
 * `moonPercent` (0-100) Percentage as shown on the in-game clock. 0 is New, 100 is Full.
 * `moonPhase` (0-7) 
-* `moonPhaseName` (string) -- Name of the moon phase
-** 0: New Moon
-** 1: Waxing Crescent
-** 2: First Quarter Moon
-** 3: Waxing Gibbous
-** 4: Full Moon
-** 5: Waning Gibbous
-** 6: Last Quarter Moon
-** 7: Waning Crescent
+* `moonPhaseName` (string) Name of the moon phase.
+
+#### Moon phase names
+* 0: New Moon
+* 1: Waxing Crescent
+* 2: First Quarter Moon
+* 3: Waxing Gibbous
+* 4: Full Moon
+* 5: Waning Gibbous
+* 6: Last Quarter Moon
+* 7: Waning Crescent
 
 ### Instance methods
 * `start()` -- Returns the beginning of the Vana'diel day.
@@ -77,8 +79,8 @@ All of these methods act on the current Vana'diel time and take an optional `Van
 
 * `isOpen()` (boolean)
 * `isHoliday()` (boolean)
-* `nextOpen()` (`VanaDate`) -- The time the shop will next be open. 
-* `nextClose()` (`VanaDate`) -- The time the shop will next close.
+* `nextOpen()` (`VanaDate`) The time the shop will next be open. 
+* `nextClose()` (`VanaDate`) The time the shop will next close.
 
 ### Usage
 
@@ -134,9 +136,9 @@ These have identical schedules in both directions, so there's only one route for
 As with `Shop`s, all of these methods act on the current Vana'diel time, and take an optional `VanaTime` parameter which makes them act on that time instead.
 
 * `isBoarding()` (boolean)
-* `nextBoarding()` (`VanaDate`) -- When the next boarding phase (1) starts.
-* `nextDeparture()` (`VanaDate`) -- When the next traveling phase (2) starts.
-* `nextPhase()` (`VanaDate`) -- The next boarding or traveling phase (1 or 2).
+* `nextBoarding()` (`VanaDate`) When the next boarding phase (1) starts.
+* `nextDeparture()` (`VanaDate`) When the next traveling phase (2) starts.
+* `nextPhase()` (`VanaDate`) The next boarding or traveling phase (1 or 2).
 
 ### Usage
 
