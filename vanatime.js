@@ -318,7 +318,7 @@
     VanaDate.dayNames = ["Firesday", "Earthsday", "Watersday", "Windsday",
                          "Iceday", "Lightningday", "Lightsday", "Darksday"];
     VanaDate.moonPhases = ["New Moon", "Waxing Crescent", "First Quarter Moon", "Waxing Gibbous",
-					     "Full Moon", "Waning Gibbous", "Last Quarter Moon", "Waning Crescent"];
+                           "Full Moon", "Waning Gibbous", "Last Quarter Moon", "Waning Crescent"];
 
 
     // Create an FFXI object and put VanaDate class in the global scope
